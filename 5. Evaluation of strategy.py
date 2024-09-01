@@ -11,18 +11,6 @@ eurusd_pnl = calculate_pnl(eurusd_data, eurusd_positions)
 eurgbp_pnl = calculate_pnl(eurgbp_data, eurgbp_positions)
 
 
-# - **Sharpe ratio** : measures the risk-adjusted return of the strategy by indicating the *excess return generated per unit of risk*
-# 
-# It it such as : 
-# <center>$$ Sharpe\ Ratio = \frac{{R_p - R_f}}{{\sigma_p}} $$<center>
-# <br>    
-# With :<br> 
-# $R_p$ the expected portfolio return<br>
-# $R_f$ the risk free rate<br>
-# $\sigma_p$ the standard deviation of the portfolio<br>
-
-
-
 # Function to calculate Sharpe Ratio
 def calculate_sharpe_ratio(pnl):
     daily_returns = pnl.pct_change().dropna()
@@ -30,18 +18,7 @@ def calculate_sharpe_ratio(pnl):
     return sharpe_ratio
 
 sharpe_ratio_eurusd = calculate_sharpe_ratio(eurusd_pnl)
-sharpe_ratio_eurgbp = calculate_sharpe_ratio(eurgbp_pnl)
-
-
-# - **Maximum drawdown** : measures the largest peak-to-trough decline in the equity curve of the strategy, it is the *maximum loss incurred by the strategy during the backtested period*
-#     
-# It it such as :
-# <center>$$ Maximum\ Drawdown = \max\left(\frac{{P_i - P_j}}{{P_i}}\right) $$<center
-# <br> 
-# With :<br> 
-# $P_i$ the trough (lowest value) of the equity curve following the peak<br>
-# $P_j$ the peak (highest value) of the equity curve up to a certain point<br>                                                                                  
-#                                                                            
+sharpe_ratio_eurgbp = calculate_sharpe_ratio(eurgbp_pnl)                                                                        
 
 
 # Function to calculate Maximum Drawdown
