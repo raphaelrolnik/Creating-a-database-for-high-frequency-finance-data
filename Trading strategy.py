@@ -48,9 +48,6 @@ handle_gaps(eurusd_data, gap_eurusd)
 handle_gaps(eurgbp_data, gap_eurgbp)
 
 
-# In[4]:
-
-
 # Application of the trading strategy
 def apply_strategy(data, lookback_period, entry_threshold):
     signals = []
